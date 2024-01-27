@@ -1,4 +1,5 @@
 ---
+import Greeting from "../components/Greeting";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
@@ -23,6 +24,8 @@ const textTransform = "lowercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <Greeting client:idle messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+
   <style define:vars={{ skillColor, fontWeight, textTransform }}>
     .skill {
       color: var(--skillColor);
